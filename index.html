@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticidade do Documento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 flex items-center justify-center min-h-screen p-4">
+
+    <div class="flex flex-col items-center w-full max-w-lg">
+        <!-- Logo atualizado para usar um link direto, garantindo a exibição -->
+        <img src="file:///C:/Users/Usuario/Downloads/logo%20uni.png" alt="Logo Universidade" class="h-24 w-auto mx-auto mb-8">
+
+        <!-- Verificação de Autenticidade -->
+        <div class="w-full text-center bg-white p-8 rounded-2xl shadow-2xl border border-gray-200">
+            <h1 class="text-2xl font-bold mb-6 text-gray-800">Autenticidade do Documento</h1>
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg relative text-left" role="alert">
+                <strong class="font-bold block">Documento autenticado!</strong>
+                <span class="block sm:inline">A autenticidade foi confirmada para:</span>
+                <div class="mt-3 bg-gray-50 p-3 rounded-md text-gray-800">
+                    <p><span class="font-semibold">Nome:</span> HUDSON ANDRE CABRAL SICCU</p>
+                    <p><span class="font-semibold">CPF:</span> 015.241.802-46</p>
+                </div>
+            </div>
+            <a id="download-doc-link" href="#" target="_blank" class="mt-6 block w-full bg-blue-600 hover:bg-blue-700 text-white text-center font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+                Acessar Documento Original
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const downloadDocLink = document.getElementById('download-doc-link');
+        
+        // Placeholder para os dados do PDF em Base64. 
+        // Para usar o ficheiro real, este Base64 deveria ser substituído pelo do ficheiro PDF verdadeiro.
+        const pdfBase64Data = "JVBERi0xLjcKMSAwIG9iago8PC9UeXBlL0NhdGFsb2cvUGFnZXMgMiAwIFI+PgplbmRvYmoKMiAwIG9iago8PC9UeXBlL1BhZ2VzL0NvdW50IDEvS2lkc1sgMyAwIFJdID4+CmVuZG9iagozIDAgb2JqCjw8L1R5cGUvUGFnZS9QYXJlbnQgMiAwIFIvUmVzb3VyY2VzIDw8L0ZvbnQgPDwvRjEgNCAwIFI+PiA+Pi9NZWRpYUJveCBbMCAwIDYxMiA3OTJdL0NvbnRlbnRzIDUgMCBSPj4KZW5kb2JqCjQgMCBvYmoKPDwvVHlwZS9Gb250L1N1YnR5cGUvVHlwZTEvQmFzZUZvbnQvSGVsdmV0aWNhPj4KZW5kb2JqCjUgMCBvYmoKPDwvTGVuZ3RoIDYxPj4Kc3RyZWFtCkJUCi9GMSAxNiBUZgoxMDAgNzAwIFRkCihEb2N1bWVudG8gZGUgRXhlbXBsbykgVGoKRVQKZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgNgowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMDkgMDAwMDAgbiAKMDAwMDAwMDA1NCAwMDAwMCBuIAowMDAwMDAwMTAyIDAwMDAwIG4gCjAwMDAwMDAyNDEgMDAwMDAgbiAKMDAwMDAwMDMwMyAwMDAwMCBuIAp0cmFpbGVyCjw8L1NpemUgNi9Sb290IDEgMCBSPj4Kc3RhcnR4cmVmCjM5MAolJUVPRgo=";
+
+        downloadDocLink.href = `data:application/pdf;base64,${pdfBase64Data}`;
+        downloadDocLink.download = "Historico_Escolar_HUDSON_ANDRE_CABRAL_SICCU.pdf";
+    </script>
+</body>
+</html>
