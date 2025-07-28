@@ -15,9 +15,7 @@
 <body class="bg-gray-100 text-gray-800 flex items-center justify-center min-h-screen p-4">
 
     <div class="flex flex-col items-center w-full max-w-lg">
-        <!-- Logo atualizado para usar um link direto, garantindo a exibição -->
-        <img src="file:///C:/Users/Usuario/Downloads/logo%20uni.png" alt="Logo Universidade" class="h-24 w-auto mx-auto mb-8">
-
+        
         <!-- Verificação de Autenticidade -->
         <div class="w-full text-center bg-white p-8 rounded-2xl shadow-2xl border border-gray-200">
             <h1 class="text-2xl font-bold mb-6 text-gray-800">Autenticidade do Documento</h1>
@@ -38,12 +36,11 @@
     <script>
         const downloadDocLink = document.getElementById('download-doc-link');
         
-        // Placeholder para os dados do PDF em Base64. 
-        // Para usar o ficheiro real, este Base64 deveria ser substituído pelo do ficheiro PDF verdadeiro.
-        const pdfBase64Data = "JVBERi0xLjcKMSAwIG9iago8PC9UeXBlL0NhdGFsb2cvUGFnZXMgMiAwIFI+PgplbmRvYmoKMiAwIG9iago8PC9UeXBlL1BhZ2VzL0NvdW50IDEvS2lkc1sgMyAwIFJdID4+CmVuZG9iagozIDAgb2JqCjw8L1R5cGUvUGFnZS9QYXJlbnQgMiAwIFIvUmVzb3VyY2VzIDw8L0ZvbnQgPDwvRjEgNCAwIFI+PiA+Pi9NZWRpYUJveCBbMCAwIDYxMiA3OTJdL0NvbnRlbnRzIDUgMCBSPj4KZW5kb2JqCjQgMCBvYmoKPDwvVHlwZS9Gb250L1N1YnR5cGUvVHlwZTEvQmFzZUZvbnQvSGVsdmV0aWNhPj4KZW5kb2JqCjUgMCBvYmoKPDwvTGVuZ3RoIDYxPj4Kc3RyZWFtCkJUCi9GMSAxNiBUZgoxMDAgNzAwIFRkCihEb2N1bWVudG8gZGUgRXhlbXBsbykgVGoKRVQKZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgNgowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMDkgMDAwMDAgbiAKMDAwMDAwMDA1NCAwMDAwMCBuIAowMDAwMDAwMTAyIDAwMDAwIG4gCjAwMDAwMDAyNDEgMDAwMDAgbiAKMDAwMDAwMDMwMyAwMDAwMCBuIAp0cmFpbGVyCjw8L1NpemUgNi9Sb290IDEgMCBSPj4Kc3RhcnR4cmVmCjM5MAolJUVPRgo=";
+        // Conteúdo do novo PDF em Base64
+        const pdfBase64Data = "JVBERi0xLjcKJcLBw4MKCjEgMCBvYmoKPDwvVHlwZSAvQ2F0YWxvZwovT3V0bGluZXMgMiAwIFIKL1BhZ2VzIDMgMCBSL09wZW5BY3Rpb24gWzYgMCBSIC9YWFogbnVsbCAwXQovUGFnZU1vZGUgL1VzZU5vbmU+PgplbmRvYmoKMiAwIG9iago8PC9UeXBlIC9PdXRsaW5lcyAvQ291bnQgMD4+CmVuZG9iagozIDAgb2JqCjw8L1R5cGUgL1BhZ2VzCi9Db3VudCAyCi9LaWRzIFs2IDAgUiA3MiAwIFIgXQovUmVzb3VyY2VzIDw8L1Byb2NTZXQgWy9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUldCi9Gb250IDw8L0YxIDUgMCBSIC9GMiA4IDAgUiAvRjMgMTEgMCBSIC9GNCAxNiAwIFIgL0Y1IDIxIDAgUiAvRjYgMjcgMCBSIC9GNyAzMyAwIFIgL0Y4IDM5IDAgUiAvRjkgNDUgMCBSIC9GMTAgNTEgMCBSIC9GMTEgNTYgMCBSIC9GMTIgNjIgMCBSID4+Cj4+Ci9NZWRpYUJveCBbMCAwIDU5NSA4NDJdCj4+CmVuZG9iago0IDAgb2JqCjw8L1R5cGUgL0ZvbnREZXNjcmlwdG9yCi9Gb250TmFtZSAvQUJDREVFK0xpYmVyYXRpb25TZXJpZgovRmxhZ3MgNAovRm9udEJCb3ggWy01MzcgLTMwMyAyMDA2IDkwN10KL0l0YWxpY0FuZ2xlIDAKL0FzY2VudCA5MDUKL0Rlc2NlbnQgLTMwMgovQ2FwSGVpZ2h0IDkwNQovU3RlbVYgODAKL0ZvbnRGaWxlMiA3IDAgUgo+PgplbmRvYmoKNSAwIG9iago8PC9UeXBlIC9Gb250Ci9TdWJ0eXBlIC9UcnVlVHlwZQovQmFzZUZvbnQgL0FCQ0RFRSBMaWJlcmF0aW9uU2VyaWYKL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcKL0ZvbnREZXNjcmlwdG9yIDQgMCBSCi9GaXJzdENoYXIgMzIKL0xhc3RDaGFyIDI1MQovV2lkdGhzIFsxMyAwIFIgMTUgMCBSIDIgMCAgXQo+PgplbmRvYmoKNiAwIG9iago8PC9UeXBlIC9QYWdlCi9QYXJlbnQgMyAwIFIKL0NvbnRlbnRzIDY5IDAgUgo+PgplbmRvYmoKNSAwIG9iago8PC9UeXBlIC9Gb250Ci9TdWJ0eXBlIC9UcnVlVHlwZQovQmFzZUZvbnQgL0FCQ0RFRSBMaWJlcmF0aW9uU2VyaWYKL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcKL0ZvbnREZXNjcmlwdG9yIDQgMCBSCi9GaXJzdENoYXIgMzIKL0xhc3RDaGFyIDI1MQovV2lkdGhzIFsxMyAwIFIgMTUgMCBSIDIgMCAgXQo+PgplbmRvYmoKNiAwIG9iago8PC9UeXBlIC9QYWdlCi9QYXJlbnQgMyAwIFIKL0NvbnRlbnRzIDY5IDAgUgo+PgplbmRvYmoK";
 
         downloadDocLink.href = `data:application/pdf;base64,${pdfBase64Data}`;
-        downloadDocLink.download = "Historico_Escolar_HUDSON_ANDRE_CABRAL_SICCU.pdf";
+        downloadDocLink.download = "Histórico Escolar - HUDSON ANDRE CABRAL 2807.pdf";
     </script>
 </body>
 </html>
